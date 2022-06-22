@@ -1,6 +1,6 @@
 public class Codewars {
     public static void main(String[] args) {
-        System.out.println(squareSum(new  int[] {1, 2, 2}));
+        System.out.println(betterThanAverage(new int[]{1, 2, 3}, 7));
 
     }
     public static String  switchItUp(int number)
@@ -60,6 +60,30 @@ public class Codewars {
 
         }
         return sum;
+    }
+    public static String doubleChar(String s){
+       String result = "";
+        for (int i = 0; i < s.length(); i++) {
+
+           result += s.substring(i, i + 1) + s.substring(i, i + 1);
+        }
+        return result;
+    }
+
+    public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+        boolean isTheBest = false;
+        int sum = 0;
+        int average = 0;
+
+        for (int i = 0; i < classPoints.length; i++) {
+            sum += classPoints[i];
+        }
+
+        sum += yourPoints;
+        average = sum / (classPoints.length + 1);
+        isTheBest = yourPoints > average;
+
+        return isTheBest;
     }
 }
 
